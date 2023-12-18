@@ -1,5 +1,3 @@
-## [aoyo blush](https://webmural.com/aoyo)
+## [nnis](https://webmural.com/nnis)
 
-* blue suna
-* blue silk
-* blue webs
+`nothing` `normal` `is` `important` 🎾

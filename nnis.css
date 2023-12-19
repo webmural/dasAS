@@ -21,17 +21,12 @@ https://webmural.com/iffy remix
 @media (prefers-contrast:more) {:root { --iffy:indigo }}
 @media (prefers-contrast:less) {:root { --yffi:peachpuff }}
 
-/* play */
+.nnis { filter: hue-rotate(288deg) }
+.sinn { filter: hue-rotate(144deg) }
+.inns { filter: hue-rotate(-144deg) }
+.snni { filter: hue-rotate(-288deg) }
 
-:root {
-  --tape-luvu: aquamarine;
-  --tape-blaq: blueviolet;
-}
-
-::selection {
-  background: darkviolet;
-  color: gold;
-}
+/* party */
 
 :focus {
   outline: .5rem dotted blueviolet;
@@ -43,22 +38,8 @@ https://webmural.com/iffy remix
   :focus { outline-color: indigo }
 }
 
-.poft {
-  text-shadow:
-    0 1vh 0 darkviolet,
-    0 2vh 0 salmon,
-    -2rem -2rem 2pc magenta,
-    -1rem -1rem 1pc magenta,
-    3rem -3rem 3pc cyan,
-    5rem -5rem 5pc cyan;
-}
-
 .feet {
   text-shadow:
-    0 1vh 0,
-    0 2vh 0,
-    0 3vh 0 blueviolet,
-    0 5vh 0 darkviolet,
     0rem 3rem 1pc magenta,
     0rem 2rem 2pc magenta,
     0rem 1rem 1pc magenta,
@@ -66,21 +47,53 @@ https://webmural.com/iffy remix
     0rem 3rem 3pc darkviolet,
     0rem 5rem 3pc darkviolet,
     0rem 8rem 3pc plum,
-    0rem 8rem 3pc salmon,
-    0rem 8rem 3pc blueviolet;
+    0rem 13rem 5pc coral,
+    0rem 21rem 3pc coral;
+}
+
+.verb {
+  text-shadow:
+    0rem 3rem 1pc magenta,
+    0rem 2rem 2pc magenta,
+    0rem 1rem 1pc magenta,
+    0rem 2rem 2pc darkviolet,
+    0rem 3rem 3pc darkviolet,
+    0rem 5rem 3pc darkviolet,
+    0rem 8rem 3pc plum,
+    0rem 13rem 5pc coral,
+    0rem 21rem 3pc coral;
+}
+
+.byte {
+  text-shadow:
+    0 1vh 0 darkviolet,
+    0 2vh 0 #ec0,
+    -2rem -2rem 2pc magenta,
+    -1rem -1rem 1pc magenta,
+    3rem -3rem 3pc cyan,
+    5rem -5rem 5pc cyan;
+}
+
+u {
+  --yffi: #ec0;
+  font-weight: bold;
+  position: relative;
+  text-indent: -1em;
+  z-index: -1;
 }
 
 .ball {
   font-size: 2rem;
 }
 
+* {
+  box-sizing: border-box;
+}
 
 :any-link {
-  background-color: hotpink;
   border: thick outset transparent;
   color: inherit;
-  padding: 1ch;
-  display: inline-block;
+  display: flex;
 }
 
 :focus {
@@ -105,44 +118,101 @@ https://webmural.com/iffy remix
   color: rgb(30, 30, 20);
 }
 
+:focus {
+  filter: hue-rotate(-72deg) !important;
+}
+
 html {
   font: max(3ch, 7vmax) / 1.618 sans-serif;
-  background: rgb(240, 210, 150);
-  color: rgb(90, 30, 150);
 }
 
 body {
-  margin: 0;
-  padding: 1rem;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto 20vh;
   overflow-wrap: anywhere;
 }
 
-* {
-  box-sizing: border-box;
+body > * {
+  flex-basis: 100%;
+}
+
+header {
+  display: flex;
+  flex-flow: column;
+  margin: 100vh auto;
 }
 
 h1 {
-  font-size: 1.618rem;
+  font-size: 1.6rem;
   margin: 0;
+  min-height: 62vh;
   text-align: end;
 }
 
+.hi {
+  margin-top: 4em;
+  letter-spacing: .8em;
+  text-indent: .2em;
+}
+
 footer {
-  font-size: 1.382rem;
+  min-height: 62vh;
+  font-size:  2rem;
+  transform: rotate(180deg);
+}
+
+aside {
+  align-items: center;
+  display: flex;
+  flex-flow: wrap;
+  font-size: 1.6rem;
+  margin-bottom: 100vh;
+  min-height: 100vh;
+}
+
+aside a {
+  align-self: flex-end;
+}
+
+s {
+  text-decoration-style: dotted;
+}
+
+nav {
+  contain: layout;
+  flex-basis: 100%;
+}
+
+luna {
+  z-index: 1;
 }
 
 menu {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: .8rem;
   list-style: none;
   padding: 0;
 }
 
 li {
+  flex-basis: 100%;
   margin: 0;
-  margin-inline: 0 1ch;
 }
 
-@media (orientation: landscape) {
-  li {
+li a {
+  margin: .2ch;
+}
+
+@media (orientation: portrait) {
+  menu,
+  aside {
+    writing-mode: vertical-rl;
   }
 }
 
+[hidden]:not(:target) {
+  display: none;
+}
